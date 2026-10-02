@@ -11,7 +11,7 @@ name: Release
 # evento é a criação do release pela interface: aí só anexa os arquivos).
 #
 # URL de manifesto para instalar no Foundry:
-#   https://github.com/juninhoneiva/combatcthud/releases/latest/download/module.json
+#   https://github.com/magisterphamtom/combatcthud/releases/latest/download/module.json
 
 on:
   push:
@@ -80,7 +80,7 @@ jobs:
 
       - name: Empacotar
         if: steps.version.outputs.skip != 'true'
-        run: zip -r module.zip module.json README.md CHANGELOG.md LICENSE scripts styles templates lang fonts
+        run: zip -r module.zip module.json README.md README.pt-BR.md CHANGELOG.md LICENSE scripts styles templates lang fonts
 
       - name: Publicar release
         if: steps.version.outputs.skip != 'true'

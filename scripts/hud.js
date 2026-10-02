@@ -1,6 +1,6 @@
 import { MODULE_ID, TEMPLATE_PATH } from './constants.js'
 import { formatInitiative, getBars, getCombatSkills, getConditions, getWeapons } from './actor-data.js'
-import { CardFeed } from './cards.js'
+import { CardFeed, chatModeKey } from './cards.js'
 import { getSetting, setSetting } from './settings.js'
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api
@@ -431,10 +431,16 @@ export class CombatCthulhuHUD extends HandlebarsApplicationMixin(ApplicationV2) 
       const roll = await new Roll(formula).evaluate()
       amount = Math.max(0, Math.floor(roll.total))
       if (!roll.isDeterministic) {
-        await roll.toMessage({
+        // v13 : rollMode ; v14 : message modes. On applique le mode à la main
+        // (même méthode que le système CoC7) pour couvrir les deux versions.
+        const mode = chatModeKey(game.user.isGM ? 'gm' : 'public')
+        const data = await roll.toMessage({
           flavor: game.i18n.localize('COMBATCTHUD.Damage.rollFlavor'),
           speaker: ChatMessage.getSpeaker({ user: game.user })
-        }, { rollMode: game.user.isGM ? CONST.DICE_ROLL_MODES.PRIVATE : CONST.DICE_ROLL_MODES.PUBLIC })
+        }, { create: false })
+        const apply = ChatMessage.applyMode ?? ChatMessage.applyRollMode
+        if (apply) apply.call(ChatMessage, data, mode)
+        await ChatMessage.create(data)
       }
     } catch (err) {
       ui.notifications.error(game.i18n.format('COMBATCTHUD.Damage.invalid', { formula }))

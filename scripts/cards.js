@@ -1,12 +1,41 @@
 import { CARD_TYPES, SYSTEM_ID } from './constants.js'
 import { getSetting } from './settings.js'
 
-/** Tipos de rolagem do Foundry (CONFIG.Dice.rollModes). */
+/**
+ * Tipos de rolagem usados internamente pelo HUD (nomes da v13).
+ * Na v14 o Foundry trocou os « roll modes » por « message modes »
+ * (public, gm, blind, self…) : normalizeMode() converte os dois formatos.
+ */
 export const ROLL_MODES = {
   public: 'publicroll',
   private: 'gmroll',
   blind: 'blindroll',
   self: 'selfroll'
+}
+
+/**
+ * Converte um modo v13 (publicroll, gmroll…) ou v14 (public, gm, blind,
+ * self, ic, ooc…) para um valor de ROLL_MODES.
+ * @param {unknown} value
+ * @returns {string|null}
+ */
+export function normalizeMode (value) {
+  if (typeof value !== 'string' || !value) return null
+  const v = value.replace(/roll$/i, '').toLowerCase()
+  if (v === 'gm' || v === 'private') return ROLL_MODES.private
+  if (v === 'blind') return ROLL_MODES.blind
+  if (v === 'self') return ROLL_MODES.self
+  if (['public', 'ic', 'ooc', 'emote', 'roll'].includes(v)) return ROLL_MODES.public
+  return null
+}
+
+/**
+ * Chave de modo aceita pelo Foundry desta versão (v13: gmroll, v14: gm…).
+ * @param {'public'|'gm'} kind
+ */
+export function chatModeKey (kind) {
+  const keys = Object.keys(CONFIG.ChatMessage?.modes ?? CONFIG.Dice?.rollModes ?? {})
+  return keys.find(k => k.replace(/roll$/i, '').toLowerCase() === kind) ?? `${kind}roll`
 }
 
 const MODE_BADGES = {
@@ -60,8 +89,11 @@ export class CardFeed {
    * @returns {string} um valor de ROLL_MODES
    */
   static rollMode (message) {
-    const flag = message.flags?.[SYSTEM_ID]?.load?.rollMode
-    if (Object.values(ROLL_MODES).includes(flag)) return flag
+    const flag = normalizeMode(message.flags?.[SYSTEM_ID]?.load?.rollMode)
+    if (flag) return flag
+    // v14 : le message peut porter directement son mode
+    const own = normalizeMode(message.mode) ?? normalizeMode(message.messageMode)
+    if (own && own !== ROLL_MODES.public) return own
     if (message.blind) return ROLL_MODES.blind
     const whisper = message.whisper ?? []
     if (!whisper.length) return ROLL_MODES.public

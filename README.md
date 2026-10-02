@@ -1,122 +1,96 @@
-# Combat Cthulhu HUD
+# Combat Cthulhu HUD — version française pour Foundry v14
 
-HUD de combate para **Call of Cthulhu 7ª Edição** no **Foundry VTT**. Reúne num só painel tudo o que importa na hora da luta: ordem de iniciativa, atributos do investigador, ataques, munição, dano e os próprios cartões de combate do sistema, prontos para usar.
+HUD de combat pour **L'Appel de Cthulhu v7** sur **Foundry VTT**. Il réunit dans un seul panneau tout ce qui compte pendant un combat : ordre d'initiative, caractéristiques de l'investigateur, attaques, munitions, dégâts et les cartes de combat du système, jouables directement.
 
-<p>
-  <img src="docs/preview.png" alt="Skin Anos 20">
-</p>
+> Ce module est le portage en **Foundry v14** et la **traduction française** de [Combat Cthulhu HUD](https://github.com/juninhoneiva/combatcthud) de **juninhoneiva** (licence MIT). Tout le mérite du module original lui revient. Le README original en portugais est dans [`README.pt-BR.md`](README.pt-BR.md).
 
-## Requisitos
+<p><img src="docs/preview.png" alt="Thème Années 20"></p>
 
-- Foundry VTT **v13**
-- Sistema **Call of Cthulhu 7th Edition (CoC7)** 8.14 ou superior
-- Opcional: [PopOut!](https://github.com/League-of-Foundry-Developers/fvtt-module-popout), para abrir o HUD numa janela separada
+## Prérequis
 
-## Instalação
+- Foundry VTT **v13 ou v14** (vérifié en 14.368)
+- Système **Call of Cthulhu 7th Edition (CoC7)** 8.14 ou plus (vérifié en 8.15)
+- Facultatif : [PopOut!](https://github.com/League-of-Foundry-Developers/fvtt-module-popout), pour ouvrir le HUD dans une fenêtre séparée
 
-Em **Add-on Modules → Install Module**, cole a URL de manifesto:
+## Installation
+
+Dans **Modules complémentaires › Installer un module**, collez le lien de manifeste :
 
 ```
-https://github.com/juninhoneiva/combatcthud/releases/latest/download/module.json
+https://github.com/magisterphamtom/combatcthud/releases/latest/download/module.json
 ```
 
-Depois, ative o módulo no mundo. O HUD aparece sempre que houver um combate na cena.
+Activez ensuite le module dans votre monde. Le HUD apparaît dès qu'un combat est en cours sur la scène.
 
-## Recursos
+## Fonctionnalités
 
-### Iniciativa
+### Initiative
+- Portraits des combattants dans l'ordre du tour, avec mise en avant de celui qui agit.
+- **Clic** : cibler (**Maj+clic** ajoute une cible) · **double-clic** : centrer sur le jeton · **clic droit** : ouvrir la fiche.
+- Indique qui a une arme à feu dégainée et respecte la règle optionnelle d'initiative de CoC7 (niveau de réussite).
 
-- Retratos dos combatentes na ordem do turno, com destaque para quem está agindo.
-- **Clique** marca o alvo (**Shift+clique** soma alvos), **duplo clique** centraliza no token e **botão direito** abre a ficha.
-- Mostra quem está com arma de fogo em punho e respeita a regra opcional de iniciativa do CoC7 (nível de sucesso).
+### Investigateur
+- Barres de **PV, PM, SAN et Chance**.
+- États CoC7 : blessure grave, mourant, inconscient, à terre, folie passagère, folie persistante, mort. Un clic les active ou les désactive.
+- MJ et joueurs utilisent le HUD ; chaque joueur voit son propre investigateur.
+- **PV privés** : le MJ voit les PV de tous ; chaque joueur ne voit que ceux de ses investigateurs.
 
-### Investigador
+### Actions rapides
+- **Attaquer** avec chaque arme du personnage, avec le déroulement normal de CoC7 (contact ou distance, contre la cible sélectionnée).
+- **Munitions** : les armes à feu affichent les balles dans le chargeur (ex. `4/6`). Clic sur recharger = chargeur plein (annoncé dans le chat) ; Maj+clic = +1 balle ; clic droit = −1 balle.
+- **Esquiver**, compétences de **Corps à corps**, jet de **Chance**, **lancer l'initiative** et **dégainer/rengainer**.
+- **Maj+clic** sur une attaque ou un jet lance directement, sans la fenêtre de difficulté.
 
-- Barras de **PV, PM, SAN e Sorte**.
-- Condições do CoC7: ferimento grave, morrendo, inconsciente, caído, insanidade temporária, insanidade indefinida e morto. Ligam e desligam com um clique.
-- Mestre e jogadores usam o HUD. Cada jogador vê o próprio investigador.
-- **PV privados**: o mestre vê os pontos de vida de todos; cada jogador vê só os dos investigadores que controla. PNJs e outros jogadores aparecem apenas com nome e retrato.
+### Dégâts rapides
+- Valeur fixe ou formule (ex. `1d6+1`).
+- Trois modes : dégâts avec armure, dégâts directs, soins.
+- S'applique aux cibles sélectionnées, avec les règles de CoC7 (blessure grave, mort, etc.).
 
-### Ações rápidas
+### Cartes du système dans le HUD
+Les cartes de combat que CoC7 envoie dans le chat apparaissent dans une colonne à droite du HUD et **fonctionnent sur place** : attaques, esquive, riposte, manœuvre, dégâts, dépense de Chance, jets redoublés, jets de SAN, de CON et opposés.
 
-- **Atacar** com cada arma do personagem, usando o fluxo original do CoC7 (corpo a corpo ou à distância, contra o alvo selecionado).
-- **Munição**: armas de fogo mostram as balas no pente (ex.: `4/6`).
-  - Clique no botão de recarregar enche o pente e anuncia no chat.
-  - Shift+clique põe uma bala.
-  - Botão direito tira uma bala.
-- **Esquivar**, perícias de **Lutar**, teste de **Sorte**, **rolar iniciativa** e **sacar/guardar arma**.
-- **Shift+clique** em ataques e testes rola direto, sem a janela de dificuldade.
-
-### Dano rápido
-
-- Aceita um valor fixo ou uma fórmula (ex.: `1d6+1`).
-- Três modos: dano com armadura, dano direto e cura.
-- Aplica nos alvos selecionados, usando as regras do CoC7 (ferimento grave, morte etc.).
-
-### Cartões do sistema no HUD
-
-Os cartões de combate que o CoC7 envia ao chat aparecem numa coluna à direita do HUD e **funcionam ali mesmo**:
-
-- ataques corpo a corpo e à distância;
-- esquivar, revidar e manobra;
-- rolar dano, gastar sorte e forçar teste;
-- testes de SAN, de CON e opostos.
-
-Os cartões respeitam o tipo de rolagem (o mestre sempre vê tudo):
-
-| Rolagem | Quem vê no HUD |
+| Type de jet | Qui le voit dans le HUD |
 | --- | --- |
-| Pública | Todos, com os resultados dos dados abertos |
-| Privada | O mestre e quem rolou |
-| Cega | O mestre; quem rolou vê o cartão sem os resultados |
-| Só para mim | O mestre e quem rolou |
+| Public | Tout le monde, résultats visibles |
+| Privé | Le MJ et l'auteur du jet |
+| Aveugle | Le MJ ; l'auteur voit la carte sans les résultats |
+| Pour moi | Le MJ et l'auteur du jet |
 
-A cada rodada o HUD limpa os cartões antigos e fica só com os da jogada atual. No chat eles continuam todos. Opcionalmente, os cartões exibidos no HUD podem ser escondidos do chat.
+À chaque round, le HUD ne garde que les cartes de l'action en cours (le chat les conserve toutes). En option, les cartes affichées dans le HUD peuvent être masquées du chat.
 
-### Skins
-
-| Skin | Estilo |
+### Thèmes
+| Thème | Style |
 | --- | --- |
-| **Anos 20** | Art Déco em preto e dourado |
-| **Pulp** | Revista de horror pulp dos anos 30, no estilo Weird Tales |
-| **Moderna** | HUD tático de vidro fosco |
+| **Années 20** | Art Déco noir et or |
+| **Pulp** | Magazine d'horreur des années 30, façon Weird Tales |
+| **Moderne** | HUD tactique en verre dépoli |
 
-<p>
-  <img src="docs/preview-pulp.png" width="420" alt="Skin Pulp">
-  <img src="docs/preview-modern.png" width="420" alt="Skin Moderna">
-</p>
+Chaque utilisateur choisit son thème.
 
-Cada usuário escolhe a sua skin; mestre e jogadores podem usar skins diferentes.
+## Utilisation
+- **Maj+H** affiche ou masque le HUD (il y a aussi un bouton dans les outils Jetons).
+- Faites glisser le HUD par son en-tête pour le déplacer ; la position est mémorisée.
+- Cliquez sur le titre d'une section pour la replier ou la déplier.
 
-## Uso
+## Réglages
 
-- **Shift+H** mostra ou oculta o HUD. Também há um botão nos controles de Token.
-- Arraste o HUD pelo cabeçalho para mudá-lo de lugar. A posição fica salva.
-- Clique no título de uma seção para recolhê-la ou expandi-la.
-- **Janela separada**: com o módulo [PopOut!](https://github.com/League-of-Foundry-Developers/fvtt-module-popout) ativo, o botão <i>abrir em janela separada</i> no cabeçalho destaca o HUD numa janela própria, ideal para um segundo monitor. O mesmo botão o traz de volta. Também dá para definir um atalho em **Configurar Controles**.
-
-## Configurações
-
-Em **Configurações → Combat Cthulhu HUD**:
-
-| Opção | Descrição | Padrão |
+| Réglage | Rôle | Par défaut |
 | --- | --- | --- |
-| Exibir HUD de combate | Liga ou desliga o HUD neste navegador | Ligado |
-| Somente durante combate | Mostra o HUD apenas com um encontro ativo na cena | Ligado |
-| Visual | Skin do HUD | Anos 20 |
-| Cartões no HUD | Quantos cartões do CoC7 ficam no HUD (0 desativa) | 3 |
-| Limpar cartões do HUD | Tira do HUD os cartões antigos a cada rodada, a cada turno ou nunca | A cada rodada |
-| Esconder do chat os cartões exibidos no HUD | Evita ver o mesmo cartão duas vezes | Desligado |
-| Jogadores podem usar o dano rápido | Libera o dano rápido aos jogadores, só nos atores deles (opção do mundo) | Desligado |
+| Afficher le HUD de combat | Active ou désactive le HUD dans ce navigateur | Oui |
+| Seulement pendant les combats | N'affiche le HUD que pendant une rencontre | Oui |
+| Thème | Apparence du HUD | Années 20 |
+| Cartes dans le HUD | Nombre de cartes CoC7 gardées dans le HUD (0 désactive) | 3 |
+| Effacer les cartes du HUD | À chaque round, à chaque tour ou jamais | À chaque round |
+| Masquer du chat les cartes du HUD | Évite de voir deux fois la même carte | Non |
+| Dégâts rapides pour les joueurs | Autorise les joueurs, sur leurs propres acteurs (réglage du monde) | Non |
 
-## Idiomas
+## Langues
+Français, anglais et portugais (Brésil).
 
-Português (Brasil) e inglês.
+## Crédits et licence
+- Module original : **juninhoneiva** — [github.com/juninhoneiva/combatcthud](https://github.com/juninhoneiva/combatcthud)
+- Portage v14 et traduction française : **magisterphamtom**
+- Code sous licence [MIT](LICENSE).
+- Polices incluses : Limelight, Poiret One, IM Fell English, Rajdhani et Inter (SIL Open Font License 1.1), Special Elite (Apache 2.0). Licences dans [`fonts/`](fonts).
 
-## Créditos e licença
-
-Código sob licença [MIT](LICENSE).
-
-Fontes incluídas: Limelight, Poiret One, IM Fell English, Rajdhani e Inter (SIL Open Font License 1.1) e Special Elite (Apache 2.0). As licenças estão em [`fonts/`](fonts).
-
-Call of Cthulhu é marca registrada da Chaosium Inc. Este módulo não é afiliado à Chaosium.
+Call of Cthulhu est une marque déposée de Chaosium Inc. Ce module n'est pas affilié à Chaosium.

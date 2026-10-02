@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.3.0
+
+Version française et compatible Foundry v14, par magisterphamtom (d'après le travail de juninhoneiva).
+
+### Nouveautés
+
+- **Compatibilité Foundry v14** (vérifiée en 14.368) : la limite « v13 maximum » du manifeste est levée.
+- **Traduction française** complète.
+- **Modes de visibilité v14** : les cartes privées, aveugles et « pour moi » sont reconnues aussi bien avec les noms de la v13 (`gmroll`, `blindroll`…) qu'avec ceux de la v14 (`gm`, `blind`…).
+- **Dégâts rapides** : le jet de dégâts du MJ reste privé en v13 comme en v14.
+- Système CoC7 vérifié en **8.15**.
+
 ## v0.2.4
 
 ### Correções

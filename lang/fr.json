@@ -1,0 +1,139 @@
+{
+  "COMBATCTHUD": {
+    "Title": "Combat",
+    "Round": "Round",
+    "NotStarted": "En attente du début",
+    "NoCombatants": "Aucun combattant dans cette rencontre.",
+    "InitiativeHint": "Clic : cibler · Maj+clic : ajouter une cible · Double-clic : centrer · Clic droit : fiche",
+    "ActionsHint": "Maj+clic lance le jet tout de suite, sans la fenêtre de difficulté.",
+    "GunDrawn": "Arme à feu dégainée",
+    "OpenSheet": "Ouvrir la fiche",
+    "Sections": {
+      "initiative": "Initiative",
+      "damage": "Dégâts rapides",
+      "cards": "Cartes"
+    },
+    "Bars": {
+      "hp": "PV",
+      "hpLong": "Points de vie",
+      "mp": "PM",
+      "mpLong": "Points de magie",
+      "san": "SAN",
+      "sanLong": "Santé mentale",
+      "lck": "Chance",
+      "lckLong": "Chance"
+    },
+    "Conditions": {
+      "criticalWounds": "Blessure grave",
+      "dying": "Mourant",
+      "unconscious": "Inconscient",
+      "prone": "À terre",
+      "tempoInsane": "Folie passagère",
+      "indefInsane": "Folie persistante",
+      "dead": "Mort"
+    },
+    "Success": {
+      "fumble": "Maladresse",
+      "failure": "Échec",
+      "regular": "Ordinaire",
+      "hard": "Majeure",
+      "extreme": "Extrême",
+      "critical": "Critique"
+    },
+    "Actions": {
+      "weaponTip": "Attaquer la cible sélectionnée avec cette arme",
+      "luck": "Chance",
+      "drawGun": "Dégainer",
+      "holsterGun": "Rengainer",
+      "reloadTip": "Recharger : clic = chargeur plein · Maj+clic = +1 balle · clic droit = −1 balle"
+    },
+    "Controls": {
+      "toggle": "Afficher/masquer le HUD de combat",
+      "previousTurn": "Tour précédent",
+      "nextTurn": "Tour suivant",
+      "nextRound": "Round suivant",
+      "startCombat": "Commencer le combat",
+      "endCombat": "Terminer le combat",
+      "endTurn": "Finir mon tour",
+      "rollInitiative": "Lancer l'initiative",
+      "hide": "Masquer le HUD (Maj+H pour le réafficher)",
+      "popout": "Ouvrir dans une fenêtre séparée (PopOut!)",
+      "popin": "Ramener dans la fenêtre principale"
+    },
+    "Damage": {
+      "placeholder": "ex. 5 ou 1d6+1",
+      "damage": "Dégâts",
+      "withArmor": "Appliquer les dégâts (l'armure les réduit)",
+      "ignoreArmor": "Dégâts directs (ignorent l'armure)",
+      "heal": "Soigner",
+      "targets": "Appliquer à",
+      "empty": "Saisissez une valeur ou une formule de dégâts.",
+      "invalid": "Formule invalide : {formula}",
+      "noTarget": "Ciblez un jeton (T) ou sélectionnez un investigateur.",
+      "notOwner": "Vous n'avez pas le droit de modifier {name}.",
+      "dealt": "<strong>{name}</strong> subit <strong>{value}</strong> points de dégâts (PV {hp}/{max}).",
+      "healed": "<strong>{name}</strong> récupère <strong>{value}</strong> PV (PV {hp}/{max}).",
+      "rollFlavor": "Dégâts rapides"
+    },
+    "Cards": {
+      "empty": "Les cartes de combat CoC7 apparaîtront ici.",
+      "dismiss": "Retirer du HUD",
+      "clear": "Effacer les cartes"
+    },
+    "Notify": {
+      "hidden": "HUD de combat masqué. Appuyez sur Maj+H ou utilisez le bouton des outils Jetons pour le réafficher.",
+      "wrongSystem": "Combat Cthulhu HUD ne fonctionne qu'avec le système L'Appel de Cthulhu v7 (CoC7)."
+    },
+    "Keybindings": {
+      "toggle": "Afficher/masquer le HUD de combat",
+      "popout": "Détacher / rattacher le HUD (PopOut!)"
+    },
+    "Skins": {
+      "noir20": "Années 20 (Art Déco)",
+      "pulp": "Pulp (Weird Tales)",
+      "modern": "Moderne (HUD tactique)"
+    },
+    "Settings": {
+      "enabled": {
+        "name": "Afficher le HUD de combat",
+        "hint": "Active ou désactive le HUD dans ce navigateur."
+      },
+      "onlyInCombat": {
+        "name": "Seulement pendant les combats",
+        "hint": "N'affiche le HUD que lorsqu'une rencontre est en cours sur la scène."
+      },
+      "skin": {
+        "name": "Thème",
+        "hint": "Apparence du HUD."
+      },
+      "maxCards": {
+        "name": "Cartes dans le HUD",
+        "hint": "Nombre de cartes de combat CoC7 (attaques, esquives, dégâts, jets) conservées dans le HUD. 0 désactive."
+      },
+      "clearCards": {
+        "name": "Effacer les cartes du HUD",
+        "hint": "Quand retirer les anciennes cartes du HUD pour ne garder que l'action en cours. Le chat les conserve toutes.",
+        "round": "À chaque round",
+        "turn": "À chaque tour",
+        "never": "Jamais"
+      },
+      "hideCardsInChat": {
+        "name": "Masquer du chat les cartes du HUD",
+        "hint": "Pendant un combat, les cartes affichées dans le HUD sont masquées du chat. Elles y reviennent quand elles quittent le HUD."
+      },
+      "playersQuickDamage": {
+        "name": "Dégâts rapides pour les joueurs",
+        "hint": "Permet aux joueurs d'appliquer des dégâts ou des soins, uniquement aux acteurs qu'ils possèdent."
+      }
+    },
+    "Reload": {
+      "alreadyFull": "{weapon} est déjà chargé à bloc.",
+      "done": "<strong>{name}</strong> recharge <strong>{weapon}</strong> ({ammo}/{bullets})."
+    },
+    "RollModes": {
+      "private": "Privé",
+      "blind": "Aveugle",
+      "self": "Pour moi"
+    }
+  }
+}
