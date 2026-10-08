@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.5.0
+
+### Nouveautés
+
+- **Deux thèmes modernes** : **New York 2026** (verre fumé, LED, signalétique du métro) et **Antarctique 2026** (tablette de station polaire, blanc glacier et orange sécurité), dérivés du thème Moderne.
+- Les cartes du HUD reprennent les couleurs de résultat du module « CoC7 – Cartes de chat thématiques ».
+
+## v0.4.0
+
+### Nouveautés
+
+- **Deux nouveaux thèmes** : **New York années 20** (bleu nuit, chrome, silhouette de Manhattan, ambre de Broadway) et **Par-delà les Montagnes Hallucinées** (carnet d'expédition polaire, bleu glacier, machine à écrire).
+- Mêmes thèmes que les modules « CoC7 – Cartes de chat thématiques » et « Token Action HUD – Thème Années 20 », qui peuvent les appliquer automatiquement.
+
 ## v0.3.0
 
 Version française et compatible Foundry v14, par magisterphamtom (d'après le travail de juninhoneiva).

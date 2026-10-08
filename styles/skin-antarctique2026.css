@@ -1,0 +1,419 @@
+/* ==========================================================================
+   Skin : Antarctique 2026 — tablette de station polaire : blanc glacier,
+   orange sécurité, chiffres de télémétrie. Dérivé du skin Moderne (version claire).
+   ========================================================================== */
+
+.combatcthud.skin-antarctique2026 {
+  --cthud-bg: rgba(247, 250, 252, 0.95);
+  --cthud-bg-2: rgba(233, 240, 245, 0.95);
+  --cthud-gold: #ff6a13;
+  --cthud-gold-light: #13202c;
+  --cthud-gold-dark: rgba(20, 50, 80, 0.14);
+  --cthud-ink: #13202c;
+  --cthud-ink-dim: #5b6f80;
+  --cthud-paper: #f3f5f8;
+  --cthud-paper-2: #e6eaf0;
+  --cthud-paper-ink: #1b2230;
+  --cthud-active: #1f7fbf;
+  --cthud-hp: #e2540a;
+  --cthud-mp: #1f7fbf;
+  --cthud-san: #2bb58a;
+  --cthud-lck: #e0a400;
+  --cthud-accent: #ff6a13;
+  --cthud-warn: #e0a400;
+  --cthud-danger: #e2540a;
+  --cthud-line: rgba(20, 50, 80, 0.12);
+  --cthud-surface: rgba(20, 50, 80, 0.05);
+  --cthud-surface-hover: rgba(255, 106, 19, 0.12);
+  --cthud-radius: 8px;
+  --cthud-shadow: 0 14px 36px rgba(20, 50, 80, 0.30), 0 0 0 1px rgba(20, 50, 80, 0.10);
+  --cthud-font-title: "CTHUD Rajdhani", "Rajdhani", "Segoe UI", sans-serif;
+  --cthud-font-label: "CTHUD Rajdhani", "Rajdhani", "Segoe UI", sans-serif;
+  --cthud-font-body: "CTHUD Inter", "Inter", "Segoe UI", Roboto, sans-serif;
+}
+
+#combatcthud.skin-antarctique2026 { font-size: 13px; }
+#combatcthud.skin-antarctique2026 button { font-family: var(--cthud-font-body); }
+
+/* ---------- Moldura: vidro fosco ---------- */
+#combatcthud.skin-antarctique2026 .cthud-frame {
+  background: linear-gradient(180deg, var(--cthud-bg-2), var(--cthud-bg));
+  -webkit-backdrop-filter: blur(12px) saturate(1.2);
+  backdrop-filter: blur(12px) saturate(1.2);
+  border: 1px solid var(--cthud-line);
+  border-radius: 16px;
+  outline: none;
+  box-shadow: var(--cthud-shadow);
+  overflow: hidden;
+}
+/* Linha de destaque no topo */
+#combatcthud.skin-antarctique2026 .cthud-frame::before {
+  top: 0;
+  left: 18px;
+  right: 18px;
+  width: auto;
+  height: 2px;
+  border: none;
+  border-radius: 0 0 2px 2px;
+  background: linear-gradient(90deg, transparent, var(--cthud-accent), transparent);
+}
+#combatcthud.skin-antarctique2026 .cthud-frame::after { display: none; }
+
+/* ---------- Cabeçalho ---------- */
+#combatcthud.skin-antarctique2026 .cthud-header {
+  padding: 12px 12px 10px 16px;
+  background: transparent;
+  border-bottom: 1px solid var(--cthud-line);
+}
+#combatcthud.skin-antarctique2026 .cthud-sunburst { display: none; }
+#combatcthud.skin-antarctique2026 .cthud-title-main {
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 4px;
+  color: var(--cthud-ink);
+  text-shadow: none;
+}
+#combatcthud.skin-antarctique2026 .cthud-title-sub {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--cthud-font-body);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0;
+  color: var(--cthud-ink-dim);
+}
+/* Indicador "ao vivo" */
+#combatcthud.skin-antarctique2026 .cthud-title-sub::before {
+  content: "";
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--cthud-san);
+  box-shadow: 0 0 0 0 rgba(43, 181, 138, 0.6);
+  animation: cthud-modern-live 2s ease-out infinite;
+}
+@keyframes cthud-modern-live {
+  70% { box-shadow: 0 0 0 6px rgba(43, 181, 138, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(43, 181, 138, 0); }
+}
+#combatcthud.skin-antarctique2026 .cthud-header-controls { gap: 4px; }
+#combatcthud.skin-antarctique2026 .cthud-header-controls button {
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  transform: none;
+  border-radius: 8px;
+  color: var(--cthud-ink-dim);
+  background: var(--cthud-surface);
+  border: 1px solid var(--cthud-line);
+  font-size: 12px;
+}
+#combatcthud.skin-antarctique2026 .cthud-header-controls button > i { transform: none; }
+#combatcthud.skin-antarctique2026 .cthud-header-controls button:hover {
+  color: #ffffff;
+  background: var(--cthud-accent);
+  border-color: var(--cthud-accent);
+  box-shadow: 0 0 14px rgba(255, 106, 19, 0.45);
+}
+#combatcthud.skin-antarctique2026 .cthud-header-controls .cthud-end-turn {
+  width: auto;
+  padding: 0 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: none;
+  color: #ffffff;
+  background: var(--cthud-accent);
+  border-color: var(--cthud-accent);
+}
+
+/* ---------- Seções ---------- */
+#combatcthud.skin-antarctique2026 .cthud-section { padding: 6px 14px 10px; }
+#combatcthud.skin-antarctique2026 .cthud-rule {
+  justify-content: flex-start;
+  margin: 6px 0 8px;
+  font-family: var(--cthud-font-label);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  color: var(--cthud-ink-dim);
+}
+#combatcthud.skin-antarctique2026 .cthud-rule::before { display: none; }
+#combatcthud.skin-antarctique2026 .cthud-rule::after {
+  height: 0;
+  border-top: 1px solid var(--cthud-line);
+  border-bottom: none;
+}
+#combatcthud.skin-antarctique2026 .cthud-rule span::before,
+#combatcthud.skin-antarctique2026 .cthud-rule span::after { content: none; }
+#combatcthud.skin-antarctique2026 .cthud-rule:hover { color: var(--cthud-ink); }
+#combatcthud.skin-antarctique2026 .cthud-actor.is-turn .cthud-rule {
+  color: var(--cthud-accent);
+  text-shadow: none;
+}
+#combatcthud.skin-antarctique2026 .cthud-hint,
+#combatcthud.skin-antarctique2026 .cthud-empty {
+  font-size: 11px;
+  color: var(--cthud-ink-dim);
+}
+
+/* ---------- Iniciativa ---------- */
+#combatcthud.skin-antarctique2026 .cthud-initiative { gap: 8px; }
+#combatcthud.skin-antarctique2026 .cthud-portrait {
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--cthud-line);
+  border-radius: 12px;
+  clip-path: none;
+  overflow: hidden;
+  background: #dfe8ef;
+}
+#combatcthud.skin-antarctique2026 .cthud-portrait img { filter: none; }
+#combatcthud.skin-antarctique2026 .cthud-combatant { opacity: 0.7; }
+#combatcthud.skin-antarctique2026 .cthud-combatant.active .cthud-portrait {
+  border-color: var(--cthud-accent);
+  background: #dfe8ef;
+  box-shadow: 0 0 0 3px rgba(255, 106, 19, 0.22), 0 0 16px rgba(255, 106, 19, 0.45);
+}
+#combatcthud.skin-antarctique2026 .cthud-combatant.targeted .cthud-portrait {
+  border-color: var(--cthud-danger);
+  box-shadow: 0 0 0 3px rgba(226, 84, 10, 0.25);
+}
+#combatcthud.skin-antarctique2026 .cthud-combatant.defeated .cthud-portrait img { filter: grayscale(1) brightness(0.6); }
+#combatcthud.skin-antarctique2026 .cthud-gun,
+#combatcthud.skin-antarctique2026 .cthud-target { color: #fff; }
+#combatcthud.skin-antarctique2026 .cthud-target { color: var(--cthud-danger); }
+#combatcthud.skin-antarctique2026 .cthud-init {
+  font-family: var(--cthud-font-body);
+  font-weight: 600;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  color: var(--cthud-ink-dim);
+}
+#combatcthud.skin-antarctique2026 .cthud-combatant.active .cthud-init {
+  padding: 0 6px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: var(--cthud-accent);
+}
+#combatcthud.skin-antarctique2026 .cthud-init-roll {
+  border-radius: 6px;
+  color: #ffffff;
+  background: var(--cthud-warn);
+  border: none;
+}
+#combatcthud.skin-antarctique2026 .cthud-mini-hp {
+  height: 3px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--cthud-line);
+}
+#combatcthud.skin-antarctique2026 .cthud-mini-hp > span { background: var(--cthud-hp); border-radius: 999px; }
+
+/* ---------- Investigador ---------- */
+#combatcthud.skin-antarctique2026 .cthud-medallion {
+  width: 68px;
+  height: 68px;
+  padding: 2px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--cthud-accent), rgba(255, 106, 19, 0.1));
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+#combatcthud.skin-antarctique2026 .cthud-medallion img {
+  border-radius: 16px;
+  border: 2px solid #ffffff;
+  filter: none;
+}
+#combatcthud.skin-antarctique2026 .cthud-bars { gap: 6px; }
+#combatcthud.skin-antarctique2026 .cthud-bar { grid-template-columns: 38px 1fr 50px; }
+#combatcthud.skin-antarctique2026 .cthud-bar-label {
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: var(--cthud-ink-dim);
+}
+#combatcthud.skin-antarctique2026 .cthud-bar-track {
+  height: 8px;
+  background: rgba(20, 50, 80, 0.07);
+  border: none;
+  border-radius: 999px;
+  box-shadow: none;
+}
+#combatcthud.skin-antarctique2026 .cthud-bar-track::after { display: none; }
+#combatcthud.skin-antarctique2026 .cthud-bar-fill {
+  border-radius: 999px;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--cthud-bar-color) 70%, #000), var(--cthud-bar-color));
+  box-shadow: 0 0 10px color-mix(in srgb, var(--cthud-bar-color) 55%, transparent);
+}
+#combatcthud.skin-antarctique2026 .cthud-bar-value {
+  font-family: var(--cthud-font-body);
+  font-weight: 600;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: var(--cthud-ink);
+}
+#combatcthud.skin-antarctique2026 .cthud-bar-value small { color: var(--cthud-ink-dim); font-weight: 400; }
+
+#combatcthud.skin-antarctique2026 .cthud-conditions { gap: 6px; }
+#combatcthud.skin-antarctique2026 .cthud-condition {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 1px solid var(--cthud-line);
+  background: var(--cthud-surface);
+  color: var(--cthud-ink-dim);
+  opacity: 0.5;
+}
+#combatcthud.skin-antarctique2026 .cthud-condition img { filter: grayscale(1) brightness(1.4); }
+#combatcthud.skin-antarctique2026 .cthud-condition.active {
+  opacity: 1;
+  color: #fff;
+  background: rgba(226, 84, 10, 0.22);
+  border-color: var(--cthud-danger);
+  box-shadow: 0 0 12px rgba(226, 84, 10, 0.35);
+}
+#combatcthud.skin-antarctique2026 .cthud-condition.active img { filter: none; }
+
+/* ---------- Botões de ação ---------- */
+#combatcthud.skin-antarctique2026 .cthud-actions { gap: 6px; }
+#combatcthud.skin-antarctique2026 .cthud-weapon-row { gap: 6px; }
+#combatcthud.skin-antarctique2026 .cthud-action,
+#combatcthud.skin-antarctique2026 .cthud-reload {
+  height: 34px;
+  color: var(--cthud-ink);
+  background: var(--cthud-surface);
+  border: 1px solid var(--cthud-line);
+  border-radius: 10px;
+  font-family: var(--cthud-font-body);
+  font-size: 12.5px;
+  transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+#combatcthud.skin-antarctique2026 .cthud-action:hover,
+#combatcthud.skin-antarctique2026 .cthud-reload:hover {
+  border-color: var(--cthud-accent);
+  background: var(--cthud-surface-hover);
+  box-shadow: 0 0 0 3px rgba(255, 106, 19, 0.12);
+}
+#combatcthud.skin-antarctique2026 .cthud-action.active {
+  border-color: var(--cthud-warn);
+  background: rgba(224, 164, 0, 0.16);
+}
+#combatcthud.skin-antarctique2026 .cthud-action > i { color: var(--cthud-accent); }
+#combatcthud.skin-antarctique2026 .cthud-action.active > i { color: var(--cthud-warn); }
+#combatcthud.skin-antarctique2026 .cthud-action img { border-radius: 6px; }
+#combatcthud.skin-antarctique2026 .cthud-action-meta {
+  font-family: var(--cthud-font-body);
+  font-weight: 600;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: var(--cthud-accent);
+}
+#combatcthud.skin-antarctique2026 .cthud-action-kind { color: var(--cthud-ink-dim); }
+#combatcthud.skin-antarctique2026 .cthud-reload {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--cthud-ink);
+}
+#combatcthud.skin-antarctique2026 .cthud-reload > i { color: var(--cthud-accent); }
+#combatcthud.skin-antarctique2026 .cthud-reload small { color: var(--cthud-ink-dim); font-weight: 400; }
+#combatcthud.skin-antarctique2026 .cthud-reload.empty {
+  color: #fff;
+  background: rgba(226, 84, 10, 0.2);
+  border-color: var(--cthud-danger);
+  animation: cthud-modern-alert 1.6s ease-in-out infinite;
+}
+#combatcthud.skin-antarctique2026 .cthud-reload.empty > i { color: var(--cthud-danger); }
+@keyframes cthud-modern-alert {
+  50% { box-shadow: 0 0 14px rgba(226, 84, 10, 0.6); }
+}
+
+/* ---------- Dano rápido ---------- */
+#combatcthud.skin-antarctique2026 .cthud-damage-row { gap: 6px; }
+#combatcthud.skin-antarctique2026 .cthud-damage-row input {
+  height: 34px;
+  padding: 0 12px;
+  font-family: var(--cthud-font-body);
+  font-size: 13px;
+  color: var(--cthud-ink);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--cthud-line);
+  border-radius: 10px;
+}
+#combatcthud.skin-antarctique2026 .cthud-damage-row input::placeholder { color: var(--cthud-ink-dim); }
+#combatcthud.skin-antarctique2026 .cthud-damage-row input:focus {
+  outline: none;
+  border-color: var(--cthud-accent);
+  box-shadow: 0 0 0 3px rgba(255, 106, 19, 0.18);
+}
+#combatcthud.skin-antarctique2026 .cthud-damage-row button {
+  height: 34px;
+  padding: 0 11px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(226, 84, 10, 0.85);
+  border: 1px solid transparent;
+}
+#combatcthud.skin-antarctique2026 .cthud-damage-row button[data-mode="direct"] { background: rgba(224, 164, 0, 0.85); color: #1b1300; }
+#combatcthud.skin-antarctique2026 .cthud-damage-row button[data-mode="heal"] { background: rgba(43, 181, 138, 0.85); color: #04251a; }
+#combatcthud.skin-antarctique2026 .cthud-damage-row button:hover {
+  border-color: #fff;
+  box-shadow: 0 0 12px rgba(20, 50, 80, 0.18);
+}
+
+/* ---------- Cartões: painéis claros sobre o vidro ---------- */
+#combatcthud.skin-antarctique2026 .cthud-cards {
+  padding: 2px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: var(--cthud-paper-ink);
+}
+#combatcthud.skin-antarctique2026 .cthud-cards .cthud-empty { color: var(--cthud-ink-dim); }
+#combatcthud.skin-antarctique2026 .cthud-card-list { gap: 10px; }
+#combatcthud.skin-antarctique2026 .cthud-card-list > .chat-message {
+  padding: 8px 10px;
+  color: var(--cthud-paper-ink);
+  background: var(--cthud-paper);
+  border: none;
+  border-left: 4px solid #c9d7e2;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(20, 50, 80, 0.18);
+  font-family: var(--cthud-font-body);
+}
+#combatcthud.skin-antarctique2026 .cthud-card-list > .chat-message:first-child {
+  border-left-color: var(--cthud-accent);
+  box-shadow: 0 6px 16px rgba(20, 50, 80, 0.18), 0 0 0 1px rgba(255, 106, 19, 0.5);
+}
+#combatcthud.skin-antarctique2026 .cthud-card-list .message-sender {
+  font-family: var(--cthud-font-label);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+#combatcthud.skin-antarctique2026 .cthud-card-dismiss {
+  top: 6px;
+  right: 6px;
+  border-radius: 50%;
+  color: #6b7688;
+}
+#combatcthud.skin-antarctique2026 .cthud-card-dismiss:hover { color: #fff; background: var(--cthud-danger); }
+#combatcthud.skin-antarctique2026 .cthud-link { color: var(--cthud-ink-dim); font-family: var(--cthud-font-body); }
+#combatcthud.skin-antarctique2026 .cthud-link:hover { color: var(--cthud-accent); }
+#combatcthud.skin-antarctique2026 .cthud-cards,
+#combatcthud.skin-antarctique2026 .cthud-initiative { scrollbar-color: rgba(20, 50, 80, 0.2) transparent; }
+
+/* Quadrillage de carte topographique + voyant orange */
+#combatcthud.skin-antarctique2026 .cthud-frame {
+  background:
+    linear-gradient(rgba(120, 160, 190, 0.08) 1px, transparent 1px) 0 0 / 16px 16px,
+    linear-gradient(90deg, rgba(120, 160, 190, 0.08) 1px, transparent 1px) 0 0 / 16px 16px,
+    linear-gradient(180deg, var(--cthud-bg-2), var(--cthud-bg));
+}
+#combatcthud.skin-antarctique2026 .cthud-title-main { text-transform: uppercase; letter-spacing: 0.12em; }
+#combatcthud.skin-antarctique2026 .cthud-title-main::before {
+  content: ""; display: inline-block; width: 9px; height: 9px; margin-right: 8px; border-radius: 50%;
+  background: #ff6a13; box-shadow: 0 0 6px rgba(255, 106, 19, 0.8); vertical-align: middle;
+}
+#combatcthud.skin-antarctique2026 .cthud-card-list > .chat-message { background: #ffffff; color: #13202c; }

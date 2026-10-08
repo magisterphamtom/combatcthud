@@ -91,7 +91,11 @@
     "Skins": {
       "noir20": "Années 20 (Art Déco)",
       "pulp": "Pulp (Weird Tales)",
-      "modern": "Moderne (HUD tactique)"
+      "modern": "Moderne (HUD tactique)",
+      "newyork": "New York années 20 (Manhattan)",
+      "montagnes": "Par-delà les Montagnes Hallucinées",
+      "ny2026": "New York 2026 (verre, LED et métro)",
+      "antarctique2026": "Antarctique 2026 (station polaire)"
     },
     "Settings": {
       "enabled": {

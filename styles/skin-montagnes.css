@@ -1,0 +1,344 @@
+/* ==========================================================================
+   Skin : Par-delà les Montagnes Hallucinées
+   Carnet de l'expédition Miskatonic (Antarctique, 1930-1931) : papier ligné
+   givré, encre bleu marine, titres en caractères anciens (IM Fell), texte à la
+   machine à écrire (Special Elite). Dérivé du skin Pulp.
+   ========================================================================== */
+
+.combatcthud.skin-montagnes {
+  --cthud-bg: #e7e9e1;
+  --cthud-bg-2: #f4f6f2;
+  --cthud-gold: #23415e;
+  --cthud-gold-light: #1d2b3a;
+  --cthud-gold-dark: rgba(29, 43, 58, 0.45);
+  --cthud-ink: #1d2b3a;
+  --cthud-ink-dim: #4f6274;
+  --cthud-paper: #f8faf7;
+  --cthud-paper-2: #e7ece8;
+  --cthud-paper-ink: #1d2b3a;
+  --cthud-active: #a3222a;
+  --cthud-hp: #a3222a;
+  --cthud-mp: #3f6a8e;
+  --cthud-san: #4e7d6c;
+  --cthud-lck: #b08a3a;
+  --cthud-wt-blood: #23415e;
+  --cthud-wt-ochre: #9fc1d9;
+  --cthud-wt-ghoul: #a3222a;
+  --cthud-wt-ink: #142a40;
+  --cthud-shadow: 0 8px 24px rgba(20, 45, 70, 0.45);
+  --cthud-font-title: "CTHUD IM Fell SC", "IM Fell English SC", Georgia, serif;
+  --cthud-font-label: "CTHUD IM Fell SC", "IM Fell English SC", Georgia, serif;
+  --cthud-font-body: "CTHUD Special Elite", "Special Elite", "Courier New", monospace;
+}
+
+#combatcthud.skin-montagnes { font-size: 13px; }
+
+/* ---------- Moldura: papel de polpa envelhecido ---------- */
+#combatcthud.skin-montagnes .cthud-frame {
+  background:
+    linear-gradient(180deg, rgba(186, 214, 232, 0.55) 0%, rgba(255, 255, 255, 0) 18%),
+    repeating-linear-gradient(0deg, transparent 0 21px, rgba(60, 100, 140, 0.10) 21px 22px),
+    linear-gradient(180deg, var(--cthud-bg-2), var(--cthud-bg));
+  border: 1px solid var(--cthud-wt-ink);
+  outline: 1px solid rgba(29, 43, 58, 0.45);
+  outline-offset: -5px;
+  box-shadow: var(--cthud-shadow), inset 0 0 40px rgba(63, 106, 142, 0.35);
+}
+#combatcthud.skin-montagnes .cthud-frame::before,
+#combatcthud.skin-montagnes .cthud-frame::after { display: none; }
+
+/* ---------- Cabeçalho: faixa do título da revista ---------- */
+#combatcthud.skin-montagnes .cthud-header {
+  padding: 8px 10px 7px 14px;
+  border-bottom: 2px solid var(--cthud-wt-ink);
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(159, 193, 217, 0.35), transparent 55%),
+    linear-gradient(180deg, #23415e, #142a40);
+}
+#combatcthud.skin-montagnes .cthud-sunburst { display: none; }
+#combatcthud.skin-montagnes .cthud-title-main {
+  font-size: 22px;
+  letter-spacing: 3px;
+  color: var(--cthud-wt-ochre);
+  text-shadow: 1px 1px 0 #000, 0 0 10px rgba(127, 167, 196, 0.25);
+  text-transform: none;
+}
+#combatcthud.skin-montagnes .cthud-title-sub {
+  font-family: var(--cthud-font-body);
+  font-style: italic;
+  font-weight: normal;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+  color: #cfe0ec;
+}
+#combatcthud.skin-montagnes .cthud-header-controls button {
+  width: 26px;
+  height: 26px;
+  margin: 0;
+  transform: none;
+  border-radius: 50%;
+  color: var(--cthud-wt-ochre);
+  background: transparent;
+  border: 1px solid rgba(127, 167, 196, 0.55);
+}
+#combatcthud.skin-montagnes .cthud-header-controls button > i { transform: none; }
+#combatcthud.skin-montagnes .cthud-header-controls button:hover {
+  color: #142a40;
+  background: var(--cthud-wt-ochre);
+  box-shadow: 0 0 8px rgba(127, 167, 196, 0.5);
+}
+#combatcthud.skin-montagnes .cthud-header-controls .cthud-end-turn {
+  width: auto;
+  padding: 0 10px;
+  border-radius: 2px;
+  font-family: var(--cthud-font-label);
+  font-weight: normal;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: none;
+  color: #eef3f7;
+  background: var(--cthud-wt-blood);
+  border-color: var(--cthud-wt-ochre);
+}
+
+/* ---------- Títulos de seção: filete duplo com vinheta ---------- */
+#combatcthud.skin-montagnes .cthud-rule {
+  font-family: var(--cthud-font-title);
+  font-weight: normal;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: none;
+  color: var(--cthud-wt-blood);
+}
+#combatcthud.skin-montagnes .cthud-rule::before,
+#combatcthud.skin-montagnes .cthud-rule::after {
+  height: 4px;
+  border-top: 1px solid var(--cthud-gold-dark);
+  border-bottom: 1px solid var(--cthud-gold-dark);
+}
+#combatcthud.skin-montagnes .cthud-rule span::before { content: "✻ "; font-size: 12px; }
+#combatcthud.skin-montagnes .cthud-rule span::after { content: " ✻"; font-size: 12px; display: inline-block; transform: scaleX(-1); }
+#combatcthud.skin-montagnes .cthud-rule:hover { color: var(--cthud-wt-ink); }
+#combatcthud.skin-montagnes .cthud-section.collapsed .cthud-rule { color: var(--cthud-ink-dim); }
+#combatcthud.skin-montagnes .cthud-actor.is-turn .cthud-rule { color: var(--cthud-wt-blood); text-shadow: 0 0 6px rgba(35, 65, 94, 0.3); }
+#combatcthud.skin-montagnes .cthud-hint,
+#combatcthud.skin-montagnes .cthud-empty {
+  font-family: var(--cthud-font-body);
+  font-style: italic;
+  font-size: 12px;
+  color: var(--cthud-ink-dim);
+}
+
+/* ---------- Iniciativa: camafeus ovais ---------- */
+#combatcthud.skin-montagnes .cthud-portrait {
+  width: 42px;
+  height: 50px;
+  border: 2px solid var(--cthud-wt-ink);
+  border-radius: 50%;
+  clip-path: none;
+  overflow: hidden;
+  background: var(--cthud-wt-ink);
+  box-shadow: 0 0 0 1px var(--cthud-bg-2), 0 0 0 2px rgba(29, 43, 58, 0.5);
+}
+#combatcthud.skin-montagnes .cthud-portrait img { filter: grayscale(0.35) contrast(1.05); }
+#combatcthud.skin-montagnes .cthud-combatant.active .cthud-portrait {
+  border-color: var(--cthud-wt-blood);
+  background: var(--cthud-wt-blood);
+  box-shadow: 0 0 0 2px var(--cthud-wt-ochre), 0 0 10px rgba(35, 65, 94, 0.6);
+}
+#combatcthud.skin-montagnes .cthud-combatant.active .cthud-portrait img { filter: grayscale(0.1); }
+#combatcthud.skin-montagnes .cthud-combatant.targeted .cthud-portrait {
+  border-color: var(--cthud-wt-ghoul);
+  box-shadow: 0 0 0 2px var(--cthud-wt-ghoul), 0 0 10px rgba(163, 34, 42, 0.7);
+}
+#combatcthud.skin-montagnes .cthud-combatant.defeated .cthud-portrait img { filter: grayscale(1) brightness(0.75); }
+#combatcthud.skin-montagnes .cthud-gun,
+#combatcthud.skin-montagnes .cthud-target { color: #eef3f7; }
+#combatcthud.skin-montagnes .cthud-target { color: #ffb3b3; }
+#combatcthud.skin-montagnes .cthud-init {
+  font-family: var(--cthud-font-label);
+  font-weight: normal;
+  font-size: 13px;
+  color: var(--cthud-ink);
+}
+#combatcthud.skin-montagnes .cthud-combatant.active .cthud-init { color: var(--cthud-wt-blood); }
+#combatcthud.skin-montagnes .cthud-init-roll {
+  color: #eef3f7;
+  background: var(--cthud-wt-blood);
+  border: 1px solid var(--cthud-wt-ink);
+}
+#combatcthud.skin-montagnes .cthud-mini-hp {
+  border: 1px solid rgba(29, 43, 58, 0.6);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* ---------- Investigador ---------- */
+#combatcthud.skin-montagnes .cthud-medallion {
+  width: 60px;
+  height: 72px;
+  padding: 3px;
+  border-radius: 50%;
+  background: var(--cthud-wt-ink);
+  box-shadow: 0 0 0 2px var(--cthud-bg-2), 0 0 0 3px var(--cthud-wt-blood), 0 4px 10px rgba(0, 0, 0, 0.35);
+}
+#combatcthud.skin-montagnes .cthud-medallion img {
+  border-radius: 50%;
+  border: 1px solid var(--cthud-wt-ochre);
+  filter: grayscale(0.3) contrast(1.05);
+}
+#combatcthud.skin-montagnes .cthud-bar-label {
+  font-family: var(--cthud-font-label);
+  font-weight: normal;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: var(--cthud-wt-blood);
+}
+#combatcthud.skin-montagnes .cthud-bar-track {
+  height: 9px;
+  background: rgba(255, 250, 235, 0.55);
+  border: 1px solid var(--cthud-wt-ink);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+#combatcthud.skin-montagnes .cthud-bar-track::after {
+  background: repeating-linear-gradient(90deg, transparent 0 9%, rgba(29, 43, 58, 0.25) 9% 9.5%);
+}
+#combatcthud.skin-montagnes .cthud-bar-fill {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(0, 0, 0, 0.12)), var(--cthud-bar-color);
+}
+#combatcthud.skin-montagnes .cthud-bar-value {
+  font-family: var(--cthud-font-body);
+  font-size: 14px;
+  color: var(--cthud-ink);
+}
+#combatcthud.skin-montagnes .cthud-bar-value small { color: var(--cthud-ink-dim); }
+
+#combatcthud.skin-montagnes .cthud-condition {
+  border: 1px solid rgba(29, 43, 58, 0.6);
+  border-radius: 50%;
+  background: rgba(255, 250, 235, 0.4);
+  color: var(--cthud-ink-dim);
+  opacity: 0.55;
+}
+#combatcthud.skin-montagnes .cthud-condition img { filter: grayscale(1) brightness(0.4); }
+#combatcthud.skin-montagnes .cthud-condition.active {
+  opacity: 1;
+  color: #eef3f7;
+  background: var(--cthud-wt-blood);
+  border-color: var(--cthud-wt-ink);
+  box-shadow: 0 0 6px rgba(35, 65, 94, 0.55);
+}
+#combatcthud.skin-montagnes .cthud-condition.active img { filter: brightness(1.6); }
+
+/* ---------- Botões de ação ---------- */
+#combatcthud.skin-montagnes .cthud-action,
+#combatcthud.skin-montagnes .cthud-reload {
+  color: var(--cthud-ink);
+  background: rgba(255, 250, 235, 0.45);
+  border: 1px solid rgba(29, 43, 58, 0.65);
+  border-radius: 2px;
+  font-family: var(--cthud-font-body);
+  font-size: 13.5px;
+}
+#combatcthud.skin-montagnes .cthud-action:hover,
+#combatcthud.skin-montagnes .cthud-reload:hover {
+  border-color: var(--cthud-wt-blood);
+  background: rgba(127, 167, 196, 0.28);
+  box-shadow: inset 0 0 0 1px rgba(35, 65, 94, 0.35);
+}
+#combatcthud.skin-montagnes .cthud-action.active {
+  color: #eef3f7;
+  background: var(--cthud-wt-blood);
+  border-color: var(--cthud-wt-ink);
+}
+#combatcthud.skin-montagnes .cthud-action > i { color: var(--cthud-wt-blood); }
+#combatcthud.skin-montagnes .cthud-action.active > i { color: var(--cthud-wt-ochre); }
+#combatcthud.skin-montagnes .cthud-action img { border-radius: 50%; filter: grayscale(0.3); }
+#combatcthud.skin-montagnes .cthud-action-meta {
+  font-family: var(--cthud-font-label);
+  font-weight: normal;
+  font-size: 13px;
+  color: var(--cthud-wt-blood);
+}
+#combatcthud.skin-montagnes .cthud-action.active .cthud-action-meta { color: var(--cthud-wt-ochre); }
+#combatcthud.skin-montagnes .cthud-action-kind { color: var(--cthud-ink-dim); }
+#combatcthud.skin-montagnes .cthud-reload {
+  font-family: var(--cthud-font-label);
+  font-weight: normal;
+  color: var(--cthud-ink);
+}
+#combatcthud.skin-montagnes .cthud-reload > i { color: var(--cthud-wt-blood); }
+#combatcthud.skin-montagnes .cthud-reload small { color: var(--cthud-ink-dim); }
+#combatcthud.skin-montagnes .cthud-reload.empty {
+  color: #eef3f7;
+  background: var(--cthud-wt-blood);
+  border-color: var(--cthud-wt-ink);
+  animation: cthud-mtn-dread 2.2s ease-in-out infinite;
+}
+#combatcthud.skin-montagnes .cthud-reload.empty > i,
+#combatcthud.skin-montagnes .cthud-reload.empty small { color: var(--cthud-wt-ochre); }
+@keyframes cthud-mtn-dread {
+  50% { box-shadow: 0 0 10px rgba(163, 34, 42, 0.8); }
+}
+
+/* ---------- Dano rápido ---------- */
+#combatcthud.skin-montagnes .cthud-damage-row input {
+  font-family: var(--cthud-font-body);
+  color: var(--cthud-ink);
+  background: rgba(255, 250, 235, 0.7);
+  border: 1px solid var(--cthud-wt-ink);
+  border-radius: 2px;
+}
+#combatcthud.skin-montagnes .cthud-damage-row button {
+  color: #eef3f7;
+  background: var(--cthud-wt-blood);
+  border: 1px solid var(--cthud-wt-ink);
+  border-radius: 2px;
+  font-family: var(--cthud-font-label);
+  font-weight: normal;
+}
+#combatcthud.skin-montagnes .cthud-damage-row button[data-mode="direct"] { background: #3d4f63; }
+#combatcthud.skin-montagnes .cthud-damage-row button[data-mode="heal"] { background: var(--cthud-san); }
+#combatcthud.skin-montagnes .cthud-damage-row button:hover {
+  border-color: var(--cthud-wt-ochre);
+  box-shadow: 0 0 6px rgba(127, 167, 196, 0.5);
+}
+
+/* ---------- Cartões ---------- */
+#combatcthud.skin-montagnes .cthud-cards {
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(63, 106, 142, 0.12), transparent 50%),
+    linear-gradient(180deg, #e3eaee, #d3dde3);
+  border: 1px solid rgba(29, 43, 58, 0.6);
+  box-shadow: inset 0 0 20px rgba(63, 106, 142, 0.3);
+}
+#combatcthud.skin-montagnes .cthud-card-list > .chat-message {
+  background: var(--cthud-paper);
+  border: 1px solid rgba(29, 43, 58, 0.55);
+  border-radius: 1px;
+  box-shadow: 1px 2px 5px rgba(20, 45, 70, 0.3);
+  font-family: var(--cthud-font-body);
+}
+#combatcthud.skin-montagnes .cthud-card-list > .chat-message:first-child {
+  border-color: var(--cthud-wt-blood);
+  box-shadow: 0 0 0 1px var(--cthud-wt-blood), 1px 2px 6px rgba(20, 45, 70, 0.4);
+}
+#combatcthud.skin-montagnes .cthud-card-list .message-sender {
+  font-family: var(--cthud-font-label);
+  font-weight: normal;
+  font-size: 15px;
+  color: var(--cthud-wt-blood);
+}
+#combatcthud.skin-montagnes .cthud-card-dismiss { color: var(--cthud-ink-dim); }
+#combatcthud.skin-montagnes .cthud-card-dismiss:hover { color: var(--cthud-wt-blood); }
+#combatcthud.skin-montagnes .cthud-link {
+  font-family: var(--cthud-font-body);
+  font-style: italic;
+  color: var(--cthud-ink-dim);
+}
+#combatcthud.skin-montagnes .cthud-link:hover { color: var(--cthud-wt-blood); }
+#combatcthud.skin-montagnes .cthud-cards,
+#combatcthud.skin-montagnes .cthud-initiative { scrollbar-color: rgba(29, 43, 58, 0.5) transparent; }
+
+/* Échec et maladresse dans les cartes : tampon d'archive (cohérent avec le chat) */
+#combatcthud.skin-montagnes .cthud-card-list .dice-total.failure,
+#combatcthud.skin-montagnes .cthud-card-list .dice-total.fumble { transform: rotate(-1.2deg); }

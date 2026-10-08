@@ -62,8 +62,19 @@ Les cartes de combat que CoC7 envoie dans le chat apparaissent dans une colonne 
 | Thème | Style |
 | --- | --- |
 | **Années 20** | Art Déco noir et or |
+| **New York années 20** | Bleu nuit et chrome, silhouette de Manhattan, ambre de Broadway |
+| **Par-delà les Montagnes Hallucinées** | Carnet d'expédition polaire, bleu glacier, machine à écrire |
+| **New York 2026** | Verre fumé, LED, signalétique du métro new-yorkais |
+| **Antarctique 2026** | Tablette de station polaire, blanc glacier et orange sécurité |
 | **Pulp** | Magazine d'horreur des années 30, façon Weird Tales |
 | **Moderne** | HUD tactique en verre dépoli |
+
+<p>
+  <img src="docs/preview-newyork.png" width="420" alt="Thème New York">
+  <img src="docs/preview-montagnes.png" width="420" alt="Thème Montagnes Hallucinées">
+</p>
+
+Les thèmes Années 20, New York, Montagnes Hallucinées, New York 2026 et Antarctique 2026 existent aussi pour le chat et Token Action HUD : le module [CoC7 – Cartes de chat thématiques](https://github.com/magisterphamtom/coc7-cartes-chat) peut les appliquer partout d'un seul réglage.
 
 Chaque utilisateur choisit son thème.
 
