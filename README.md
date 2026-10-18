@@ -1,3 +1,5 @@
+<p align="center"><img src=".github/banner.png" alt="combatcthud" width="100%"></p>
+
 # Combat Cthulhu HUD — version française pour Foundry v14
 
 HUD de combat pour **L'Appel de Cthulhu v7** sur **Foundry VTT**. Il réunit dans un seul panneau tout ce qui compte pendant un combat : ordre d'initiative, caractéristiques de l'investigateur, attaques, munitions, dégâts et les cartes de combat du système, jouables directement.
