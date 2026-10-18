@@ -2,7 +2,7 @@
   "id": "combatcthud",
   "title": "Combat Cthulhu HUD",
   "description": "HUD de combat pour L'Appel de Cthulhu v7 (système CoC7) : ordre d'initiative, PV/PM/SAN/Chance, actions rapides, dégâts rapides et cartes de combat du système jouables directement dans le HUD. Thèmes : Années 20 (Art Déco), Pulp (Weird Tales) et Moderne. Portage v14 et traduction française du module de juninhoneiva.",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "authors": [
     {
       "name": "juninhoneiva",
@@ -47,7 +47,8 @@
     "styles/skin-newyork.css",
     "styles/skin-montagnes.css",
     "styles/skin-ny2026.css",
-    "styles/skin-antarctique2026.css"
+    "styles/skin-antarctique2026.css",
+    "styles/perf.css"
   ],
   "languages": [
     {
@@ -68,7 +69,7 @@
   ],
   "url": "https://github.com/magisterphamtom/combatcthud",
   "manifest": "https://github.com/magisterphamtom/combatcthud/releases/latest/download/module.json",
-  "download": "https://github.com/magisterphamtom/combatcthud/releases/download/v0.5.0/module.zip",
+  "download": "https://github.com/magisterphamtom/combatcthud/releases/download/v0.5.1/module.zip",
   "bugs": "https://github.com/magisterphamtom/combatcthud/issues",
   "readme": "https://github.com/magisterphamtom/combatcthud#readme",
   "media": [

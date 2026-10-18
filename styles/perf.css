@@ -1,0 +1,22 @@
+/* Performances : animations rendues par la carte graphique (opacité) au lieu d'ombres redessinées à chaque image.
+   Même rendu à l'œil, coût processeur divisé (important pour les PC portables). */
+#combatcthud.combatcthud .cthud-reload.empty { animation: none !important; position: relative; }
+#combatcthud.combatcthud .cthud-reload.empty::after {
+  content: ""; position: absolute; inset: -1px; border-radius: inherit; pointer-events: none;
+  box-shadow: 0 0 10px var(--cthud-pulse-color, rgba(224, 90, 79, 0.9));
+  opacity: 0; will-change: opacity; animation: cthud-pulse-opacity 1.4s ease-in-out infinite;
+}
+#combatcthud.skin-montagnes .cthud-reload.empty { --cthud-pulse-color: rgba(163, 34, 42, 0.8); }
+#combatcthud.skin-pulp .cthud-reload.empty { --cthud-pulse-color: rgba(127, 154, 74, 0.8); }
+#combatcthud.skin-modern .cthud-reload.empty,
+#combatcthud.skin-ny2026 .cthud-reload.empty,
+#combatcthud.skin-antarctique2026 .cthud-reload.empty { --cthud-pulse-color: rgba(226, 84, 10, 0.6); }
+#combatcthud.skin-modern .cthud-reload.empty::after,
+#combatcthud.skin-ny2026 .cthud-reload.empty::after,
+#combatcthud.skin-antarctique2026 .cthud-reload.empty::after { box-shadow: 0 0 14px var(--cthud-pulse-color); animation-duration: 1.6s; }
+#combatcthud.combatcthud .cthud-title-sub::before { animation: cthud-live-opacity 2s ease-in-out infinite !important; box-shadow: none !important; will-change: opacity; }
+@keyframes cthud-pulse-opacity { 50% { opacity: 1; } }
+@keyframes cthud-live-opacity { 50% { opacity: 0.35; } }
+@media (prefers-reduced-motion: reduce) {
+  #combatcthud .cthud-reload.empty::after, #combatcthud .cthud-title-sub::before { animation: none !important; }
+}
