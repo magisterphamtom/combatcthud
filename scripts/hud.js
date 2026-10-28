@@ -275,9 +275,10 @@ export class CombatCthulhuHUD extends HandlebarsApplicationMixin(ApplicationV2) 
     const size = getSetting('size')
     const el = this.element
     el.classList.toggle('cthud-sized', !!size)
-    if (!size) { el.style.removeProperty('height'); el.style.removeProperty('--cthud-side-w'); return }
-    el.style.height = `${Math.min(size.height, window.innerHeight - 10)}px`
+    // La hauteur passe par setPosition : sinon un déplacement remet la taille automatique
+    if (!size) { el.style.removeProperty('--cthud-side-w'); this.setPosition({ height: 'auto' }); return }
     el.style.setProperty('--cthud-side-w', `${size.side}px`)
+    this.setPosition({ height: Math.min(size.height, window.innerHeight - 10) })
   }
 
   #bindResize () {
@@ -302,8 +303,8 @@ export class CombatCthulhuHUD extends HandlebarsApplicationMixin(ApplicationV2) 
           side: Math.max(220, Math.min(900, start.side + ev.clientX - start.x))
         }
         el.classList.add('cthud-sized')
-        el.style.height = `${size.height}px`
         el.style.setProperty('--cthud-side-w', `${size.side}px`)
+        this.setPosition({ height: size.height })
       }
       const up = () => {
         window.removeEventListener('pointermove', move)
