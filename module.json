@@ -2,7 +2,7 @@
   "id": "combatcthud",
   "title": "Combat Cthulhu HUD",
   "description": "HUD de combat pour L'Appel de Cthulhu v7 (système CoC7) : ordre d'initiative, PV/PM/SAN/Chance, actions rapides, dégâts rapides et cartes de combat du système jouables directement dans le HUD. Thèmes : Années 20 (Art Déco), Pulp (Weird Tales) et Moderne. Portage v14 et traduction française du module de juninhoneiva.",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "authors": [
     {
       "name": "juninhoneiva",
