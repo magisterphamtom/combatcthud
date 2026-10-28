@@ -684,3 +684,11 @@
 .cthud-tactic-dialog .cthud-tactic-choice:has(input:checked) { border-color: var(--color-border-highlight, #ff6400); background: rgba(201, 162, 74, .12); }
 .cthud-tactic-card h3 { margin: 0 0 4px; font-size: 1.05em; border: none; }
 .cthud-tactic-card p { margin: 2px 0; }
+
+/* ---------- Taille automatique : la colonne des cartes suit la hauteur du panneau principal ---------- */
+/* Les cartes ne poussent plus le HUD jusqu'en bas de l'écran : elles défilent dans leur colonne. */
+#combatcthud:not(.cthud-sized):not(.cthud-popped) .cthud-side:not(.collapsed) { position: relative; min-height: 360px; }
+#combatcthud:not(.cthud-sized):not(.cthud-popped) .cthud-side:not(.collapsed) > .cthud-section-body {
+  position: absolute; left: 10px; right: 10px; top: 34px; bottom: 8px;
+}
+#combatcthud:not(.cthud-sized):not(.cthud-popped) .cthud-side:not(.collapsed) .cthud-cards { max-height: none; flex: 1 1 auto; min-height: 0; }

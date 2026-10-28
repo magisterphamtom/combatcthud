@@ -5,6 +5,7 @@
 ### Nouveautés
 
 - **Manœuvre** : bouton du panneau d'actions. Choix de la manœuvre (désarmer, renverser, immobiliser…), comparaison des Carrures avec la cible visée (un dé malus par point d'écart, impossible à 3 ou plus), rappel de la règle dans le chat, puis jet de Combat rapproché avec les dés malus déjà réglés.
+- **Cartes du HUD** : en taille automatique, la colonne des cartes suit la hauteur du panneau de l'acteur et défile à l'intérieur, au lieu d'allonger le HUD jusqu'en bas de l'écran.
 - **À couvert** : jet d'Esquive ; le résultat est lu sur la carte de CoC7. Réussi : icône « À couvert » sur le jeton jusqu'à la fin du round et rappel d'activer l'option « À couvert » de la carte de tir. Réussi ou non : rappel de la perte de la prochaine action.
 
 ## v0.5.2
