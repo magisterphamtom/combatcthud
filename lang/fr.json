@@ -139,6 +139,46 @@
       "private": "Privé",
       "blind": "Aveugle",
       "self": "Pour moi"
+    },
+    "Tactics": {
+      "needTarget": "Visez d'abord la cible (touche T sur son jeton).",
+      "noFighting": "{name} n'a pas de compétence de combat rapproché.",
+      "noDodge": "{name} n'a pas la compétence Esquive.",
+      "impossible": "Manœuvre impossible : la Carrure de {target} ({bT}) dépasse celle de {name} ({bA}) de 3 ou plus.",
+      "maneuverTitle": "Manœuvre",
+      "builds": "Carrure de {name} : {bA} · Carrure de {target} : {bT}",
+      "penalty": "{n} dé(s) malus",
+      "noPenalty": "Aucun dé malus",
+      "maneuverHint": "Le jet se fait avec {skill}. La cible répond par Esquive ou Combat rapproché ; le meilleur niveau de réussite l'emporte.",
+      "roll": "Lancer",
+      "cancel": "Annuler",
+      "maneuverCard": "Manœuvre : {m} contre {target}",
+      "maneuverRule": "{target} répond par Esquive ou Combat rapproché (jet opposé). Si la manœuvre l'emporte, la cible {e}.",
+      "coverOk": "{name} se jette à couvert",
+      "coverOkRule": "Esquive réussie : les tirs contre ce personnage prennent un dé malus jusqu'à la fin du round (option « À couvert » de la carte de tir). Il perd sa prochaine action.",
+      "coverKo": "{name} plonge, sans trouver de couvert",
+      "coverKoRule": "Esquive ratée : pas de dé malus pour les tireurs. Il perd quand même sa prochaine action.",
+      "coverStatus": "À couvert",
+      "maneuverBtn": "Manœuvre",
+      "maneuverTip": "Manœuvre contre le jeton visé (désarmer, renverser, immobiliser…) : la Carrure compte, un dé malus par point d'écart si la cible est plus grosse, impossible à 3 ou plus.",
+      "coverBtn": "À couvert",
+      "coverTip": "Se jeter à couvert face à un tireur : jet d'Esquive. Réussi : un dé malus pour les tireurs ce round. Réussi ou non : perd sa prochaine action.",
+      "m": {
+        "disarm": "Désarmer",
+        "knockdown": "Renverser",
+        "hold": "Immobiliser",
+        "push": "Repousser",
+        "grab": "Saisir un objet",
+        "other": "Autre"
+      },
+      "e": {
+        "disarm": "lâche son arme",
+        "knockdown": "est jetée à terre",
+        "hold": "est immobilisée et doit se libérer pour agir",
+        "push": "est repoussée de quelques mètres",
+        "grab": "se fait prendre l'objet",
+        "other": "subit la manœuvre"
+      }
     }
   }
 }

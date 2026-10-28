@@ -676,3 +676,11 @@
 #combatcthud .cthud-resize i { transform: translate(3px, 3px); }
 #combatcthud.cthud-sized .cthud-cards-section > .cthud-section-body { flex: 1 1 auto; }
 #combatcthud.cthud-popped .cthud-resize { display: none; }
+
+/* ---------- Manœuvre / À couvert ---------- */
+.cthud-tactic-dialog .cthud-tactic-builds { margin: 0 0 8px; }
+.cthud-tactic-dialog .cthud-tactic-choices { display: flex; flex-direction: column; gap: 4px; }
+.cthud-tactic-dialog .cthud-tactic-choice { display: flex; align-items: flex-start; gap: 8px; padding: 4px 6px; border: 1px solid var(--color-border-light-2, #7a7971); border-radius: 3px; cursor: pointer; }
+.cthud-tactic-dialog .cthud-tactic-choice:has(input:checked) { border-color: var(--color-border-highlight, #ff6400); background: rgba(201, 162, 74, .12); }
+.cthud-tactic-card h3 { margin: 0 0 4px; font-size: 1.05em; border: none; }
+.cthud-tactic-card p { margin: 2px 0; }

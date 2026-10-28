@@ -144,6 +144,14 @@
             <i class="fa-solid fa-clover"></i>
             <span class="cthud-action-name">{{localize "COMBATCTHUD.Actions.luck"}}</span>
           </button>
+          <button type="button" class="cthud-action cthud-skill" data-action="cthudManeuver" data-tooltip="{{localize 'COMBATCTHUD.Tactics.maneuverTip'}}">
+            <i class="fa-solid fa-hand-back-fist"></i>
+            <span class="cthud-action-name">{{localize "COMBATCTHUD.Tactics.maneuverBtn"}}</span>
+          </button>
+          <button type="button" class="cthud-action cthud-skill" data-action="cthudCover" data-tooltip="{{localize 'COMBATCTHUD.Tactics.coverTip'}}">
+            <i class="fa-solid fa-person-falling"></i>
+            <span class="cthud-action-name">{{localize "COMBATCTHUD.Tactics.coverBtn"}}</span>
+          </button>
           {{#if actor.combatant}}
             {{#unless actor.combatant.hasInitiative}}
               <button type="button" class="cthud-action cthud-skill" data-action="cthudRollInitiative" data-combatant-id="{{actor.combatant.id}}">

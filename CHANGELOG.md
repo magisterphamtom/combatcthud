@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.6.0
+
+### Nouveautés
+
+- **Manœuvre** : bouton du panneau d'actions. Choix de la manœuvre (désarmer, renverser, immobiliser…), comparaison des Carrures avec la cible visée (un dé malus par point d'écart, impossible à 3 ou plus), rappel de la règle dans le chat, puis jet de Combat rapproché avec les dés malus déjà réglés.
+- **À couvert** : jet d'Esquive ; le résultat est lu sur la carte de CoC7. Réussi : icône « À couvert » sur le jeton jusqu'à la fin du round et rappel d'activer l'option « À couvert » de la carte de tir. Réussi ou non : rappel de la perte de la prochaine action.
+
 ## v0.5.2
 
 ### Nouveautés

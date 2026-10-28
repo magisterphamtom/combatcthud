@@ -2,6 +2,9 @@ import { MODULE_ID, SYSTEM_ID } from './constants.js'
 import { CardFeed } from './cards.js'
 import { CombatCthulhuHUD } from './hud.js'
 import { getSetting, registerSettings } from './settings.js'
+import { registerTactics } from './tactics.js'
+
+registerTactics()
 
 /** @type {CombatCthulhuHUD|null} */
 let hud = null

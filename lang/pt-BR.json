@@ -139,6 +139,46 @@
       "private": "Privada",
       "blind": "Cega",
       "self": "Só para mim"
+    },
+    "Tactics": {
+      "needTarget": "Target a token first (T key).",
+      "noFighting": "{name} has no Fighting skill.",
+      "noDodge": "{name} has no Dodge skill.",
+      "impossible": "Maneuver impossible: {target}'s Build ({bT}) exceeds {name}'s ({bA}) by 3 or more.",
+      "maneuverTitle": "Maneuver",
+      "builds": "{name}'s Build: {bA} · {target}'s Build: {bT}",
+      "penalty": "{n} penalty die/dice",
+      "noPenalty": "No penalty die",
+      "maneuverHint": "Rolled with {skill}. The target responds with Dodge or Fighting; the higher success level wins.",
+      "roll": "Roll",
+      "cancel": "Cancel",
+      "maneuverCard": "Maneuver: {m} against {target}",
+      "maneuverRule": "{target} responds with Dodge or Fighting (opposed roll). If the maneuver wins, the target {e}.",
+      "coverOk": "{name} dives for cover",
+      "coverOkRule": "Dodge succeeded: shots against this character take a penalty die until the end of the round (\"In cover\" option of the firearm card). They lose their next action.",
+      "coverKo": "{name} dives, but finds no cover",
+      "coverKoRule": "Dodge failed: no penalty die for the shooters. They still lose their next action.",
+      "coverStatus": "In cover",
+      "maneuverBtn": "Maneuver",
+      "maneuverTip": "Maneuver against the targeted token (disarm, knock down, hold…): Build matters, one penalty die per point if the target is bigger, impossible at 3 or more.",
+      "coverBtn": "Take cover",
+      "coverTip": "Dive for cover against a shooter: Dodge roll. Success: one penalty die for shooters this round. Either way: lose next action.",
+      "m": {
+        "disarm": "Disarm",
+        "knockdown": "Knock down",
+        "hold": "Hold",
+        "push": "Push back",
+        "grab": "Grab an item",
+        "other": "Other"
+      },
+      "e": {
+        "disarm": "drops their weapon",
+        "knockdown": "is knocked to the ground",
+        "hold": "is held and must break free to act",
+        "push": "is pushed back a few metres",
+        "grab": "has the item taken",
+        "other": "suffers the maneuver"
+      }
     }
   }
 }

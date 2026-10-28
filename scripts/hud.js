@@ -2,6 +2,7 @@ import { MODULE_ID, TEMPLATE_PATH } from './constants.js'
 import { formatInitiative, getBars, getCombatSkills, getConditions, getWeapons } from './actor-data.js'
 import { CardFeed, chatModeKey } from './cards.js'
 import { getSetting, setSetting } from './settings.js'
+import { maneuver, takeCover } from './tactics.js'
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api
 
@@ -36,6 +37,8 @@ export class CombatCthulhuHUD extends HandlebarsApplicationMixin(ApplicationV2) 
       cthudReload: CombatCthulhuHUD.#onReload,
       cthudSkill: CombatCthulhuHUD.#onSkill,
       cthudLuck: CombatCthulhuHUD.#onLuck,
+      cthudManeuver: CombatCthulhuHUD.#onManeuver,
+      cthudCover: CombatCthulhuHUD.#onCover,
       cthudCondition: CombatCthulhuHUD.#onCondition,
       cthudOpenSheet: CombatCthulhuHUD.#onOpenSheet,
       cthudDamage: CombatCthulhuHUD.#onDamage,
@@ -441,6 +444,9 @@ export class CombatCthulhuHUD extends HandlebarsApplicationMixin(ApplicationV2) 
     if (!actor) return
     actor.skillCheck(target.dataset.uuid, event.shiftKey)
   }
+
+  static #onManeuver (event) { return maneuver(this.focusActor, event) }
+  static #onCover (event) { return takeCover(this.focusActor, event) }
 
   static #onLuck (event) {
     this.focusActor?.attributeCheck('lck', event.shiftKey)

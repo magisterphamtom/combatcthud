@@ -80,7 +80,7 @@ jobs:
 
       - name: Empacotar
         if: steps.version.outputs.skip != 'true'
-        run: zip -r module.zip module.json README.md README.pt-BR.md CHANGELOG.md LICENSE scripts styles templates lang fonts
+        run: zip -r module.zip module.json README.md README.pt-BR.md CHANGELOG.md LICENSE scripts styles templates lang fonts icons
 
       - name: Publicar release
         if: steps.version.outputs.skip != 'true'
