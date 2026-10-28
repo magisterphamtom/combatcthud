@@ -262,6 +262,11 @@ export class CombatCthulhuHUD extends HandlebarsApplicationMixin(ApplicationV2) 
 
     // Numa janela do PopOut! o HUD ocupa a janela toda: sem arrastar.
     if (!this.isPoppedOut) { this.#bindDrag(); this.#bindResize(); this.#applySize() }
+    this.#fitCards()
+    if (!this._cthudFitBound) {
+      this._cthudFitBound = true
+      window.addEventListener('resize', () => this.#fitCards())
+    }
     this.#bindInitiative()
   }
 
@@ -271,6 +276,30 @@ export class CombatCthulhuHUD extends HandlebarsApplicationMixin(ApplicationV2) 
     const left = Math.clamp(pos.left ?? 110, 0, Math.max(window.innerWidth - 200, 0))
     const top = Math.clamp(pos.top ?? 70, 0, Math.max(window.innerHeight - 80, 0))
     this.setPosition({ left, top })
+  }
+
+  /**
+   * La colonne des cartes ne doit jamais agrandir le HUD : on lui donne une hauteur fixe,
+   * celle qui reste jusqu'au bas du panneau (taille automatique : hauteur du panneau de l'acteur ;
+   * taille choisie : hauteur réglée). Au-delà, elle défile.
+   */
+  #fitCards () {
+    const el = this.element
+    const cards = el?.querySelector('.cthud-side .cthud-cards')
+    const body = el?.querySelector('.cthud-body')
+    const side = el?.querySelector('.cthud-side')
+    if (!cards || !body || !side || side.classList.contains('collapsed')) return
+    if (this.isPoppedOut) { cards.classList.remove('cthud-fitted'); cards.style.removeProperty('height'); return }
+    cards.classList.add('cthud-fitted')
+    cards.style.height = '0px'
+    const bodyBottom = body.getBoundingClientRect().bottom
+    const top = cards.getBoundingClientRect().top
+    // Ce qui suit les cartes dans la colonne (bouton « Effacer ») + la marge basse de la colonne
+    let footer = 10
+    for (let n = cards.nextElementSibling; n; n = n.nextElementSibling) footer += n.offsetHeight + 4
+    const maxScreen = window.innerHeight - top - footer - 12
+    const avail = Math.min(bodyBottom - top - footer - 4, maxScreen)
+    cards.style.height = `${Math.max(180, Math.floor(avail))}px`
   }
 
   /** Taille choisie à la main (poignée en bas à droite) ; null = taille automatique. */
@@ -291,6 +320,7 @@ export class CombatCthulhuHUD extends HandlebarsApplicationMixin(ApplicationV2) 
       event.preventDefault()
       await setSetting('size', null)
       this.#applySize()
+      this.#fitCards()
     })
     handle.addEventListener('pointerdown', (event) => {
       if (event.button !== 0) return
@@ -308,6 +338,7 @@ export class CombatCthulhuHUD extends HandlebarsApplicationMixin(ApplicationV2) 
         el.classList.add('cthud-sized')
         el.style.setProperty('--cthud-side-w', `${size.side}px`)
         this.setPosition({ height: size.height })
+        this.#fitCards()
       }
       const up = () => {
         window.removeEventListener('pointermove', move)
