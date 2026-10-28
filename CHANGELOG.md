@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.5.2
+
+### Corrections
+
+- Le libellé « Chance » des jauges n'est plus coupé par la barre (colonne des libellés élargie dans tous les thèmes).
+
 ## v0.5.0
 
 ### Nouveautés

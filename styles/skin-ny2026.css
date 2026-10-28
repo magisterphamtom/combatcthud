@@ -226,7 +226,7 @@
   filter: none;
 }
 #combatcthud.skin-ny2026 .cthud-bars { gap: 6px; }
-#combatcthud.skin-ny2026 .cthud-bar { grid-template-columns: 38px 1fr 50px; }
+#combatcthud.skin-ny2026 .cthud-bar { grid-template-columns: 56px 1fr 50px; }
 #combatcthud.skin-ny2026 .cthud-bar-label {
   font-weight: 700;
   font-size: 12px;
