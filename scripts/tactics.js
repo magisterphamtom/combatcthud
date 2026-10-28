@@ -84,10 +84,10 @@ let pending = null // { actorUuid, until }
 /** Résultat d'une carte de jet CoC7 (dernière ligne de dés) : true, false, ou null tant qu'elle n'est pas révélée. */
 function resultOf (message) {
   const html = message.content ?? ''
-  const all = [...html.matchAll(/class="dice-formula[^"]*\b(critical|success|failure|fumble)\b/g)]
+  // <h4 class="dice-total …"> est toujours affiché (dice-formula dépend des réglages de chaque joueur)
+  const all = [...html.matchAll(/<h4 class="dice-total([^"]*)"/g)].map(m => m[1]).filter(c => /\b(critical|fumble|failure|success-[a-z]+)\b/.test(c))
   if (!all.length) return null
-  const last = all.at(-1)[1]
-  return last === 'critical' || last === 'success'
+  return !/\b(failure|fumble)\b/.test(all.at(-1))
 }
 
 async function watch (message) {
