@@ -659,3 +659,20 @@
 
 /* ---------- Esconder no chat (opção) ---------- */
 .chat-message.cthud-hidden-in-chat { display: none !important; }
+
+/* ---------- Taille choisie à la main (poignée en bas à droite) ---------- */
+#combatcthud.cthud-sized .cthud-frame { flex: 1 1 auto; height: calc(100% - 8px); }
+#combatcthud.cthud-sized .cthud-side { width: var(--cthud-side-w, 420px); display: flex; flex-direction: column; }
+#combatcthud.cthud-sized .cthud-side.collapsed { width: auto; }
+#combatcthud.cthud-sized .cthud-side .cthud-cards { max-height: none; flex: 1 1 auto; }
+#combatcthud .cthud-resize {
+  position: absolute; right: -2px; bottom: -2px; z-index: 2;
+  width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;
+  cursor: nwse-resize; color: var(--cthud-gold); font-size: 11px;
+  background: linear-gradient(135deg, transparent 50%, var(--cthud-gold-dark) 50%);
+  opacity: .8; touch-action: none;
+}
+#combatcthud .cthud-resize:hover { opacity: 1; color: var(--cthud-gold-light, #f0d58c); }
+#combatcthud .cthud-resize i { transform: translate(3px, 3px); }
+#combatcthud.cthud-sized .cthud-cards-section > .cthud-section-body { flex: 1 1 auto; }
+#combatcthud.cthud-popped .cthud-resize { display: none; }

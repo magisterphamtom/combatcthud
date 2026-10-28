@@ -258,7 +258,7 @@ export class CombatCthulhuHUD extends HandlebarsApplicationMixin(ApplicationV2) 
     })
 
     // Numa janela do PopOut! o HUD ocupa a janela toda: sem arrastar.
-    if (!this.isPoppedOut) this.#bindDrag()
+    if (!this.isPoppedOut) { this.#bindDrag(); this.#bindResize(); this.#applySize() }
     this.#bindInitiative()
   }
 
@@ -268,6 +268,51 @@ export class CombatCthulhuHUD extends HandlebarsApplicationMixin(ApplicationV2) 
     const left = Math.clamp(pos.left ?? 110, 0, Math.max(window.innerWidth - 200, 0))
     const top = Math.clamp(pos.top ?? 70, 0, Math.max(window.innerHeight - 80, 0))
     this.setPosition({ left, top })
+  }
+
+  /** Taille choisie à la main (poignée en bas à droite) ; null = taille automatique. */
+  #applySize () {
+    const size = getSetting('size')
+    const el = this.element
+    el.classList.toggle('cthud-sized', !!size)
+    if (!size) { el.style.removeProperty('height'); el.style.removeProperty('--cthud-side-w'); return }
+    el.style.height = `${Math.min(size.height, window.innerHeight - 10)}px`
+    el.style.setProperty('--cthud-side-w', `${size.side}px`)
+  }
+
+  #bindResize () {
+    const handle = this.element.querySelector('.cthud-resize')
+    if (!handle) return
+    handle.addEventListener('dblclick', async (event) => {
+      event.preventDefault()
+      await setSetting('size', null)
+      this.#applySize()
+    })
+    handle.addEventListener('pointerdown', (event) => {
+      if (event.button !== 0) return
+      event.preventDefault()
+      event.stopPropagation()
+      const el = this.element
+      const side = el.querySelector('.cthud-side')
+      const start = { x: event.clientX, y: event.clientY, height: el.offsetHeight, side: side?.offsetWidth ?? 420 }
+      let size = null
+      const move = (ev) => {
+        size = {
+          height: Math.max(260, Math.min(window.innerHeight - el.offsetTop - 5, start.height + ev.clientY - start.y)),
+          side: Math.max(220, Math.min(900, start.side + ev.clientX - start.x))
+        }
+        el.classList.add('cthud-sized')
+        el.style.height = `${size.height}px`
+        el.style.setProperty('--cthud-side-w', `${size.side}px`)
+      }
+      const up = () => {
+        window.removeEventListener('pointermove', move)
+        window.removeEventListener('pointerup', up)
+        if (size) setSetting('size', size)
+      }
+      window.addEventListener('pointermove', move)
+      window.addEventListener('pointerup', up)
+    })
   }
 
   #bindDrag () {

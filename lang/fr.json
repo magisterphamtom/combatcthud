@@ -58,7 +58,8 @@
       "rollInitiative": "Lancer l'initiative",
       "hide": "Masquer le HUD (Maj+H pour le réafficher)",
       "popout": "Ouvrir dans une fenêtre séparée (PopOut!)",
-      "popin": "Ramener dans la fenêtre principale"
+      "popin": "Ramener dans la fenêtre principale",
+      "resize": "Redimensionner (double-clic : taille automatique)"
     },
     "Damage": {
       "placeholder": "ex. 5 ou 1d6+1",

@@ -58,7 +58,8 @@
       "rollInitiative": "Rolar iniciativa",
       "hide": "Ocultar HUD (Shift+H para voltar)",
       "popout": "Abrir em janela separada (PopOut!)",
-      "popin": "Trazer de volta para a janela principal"
+      "popin": "Trazer de volta para a janela principal",
+      "resize": "Redimensionar (duplo clique: tamanho automático)"
     },
     "Damage": {
       "placeholder": "Ex.: 5 ou 1d6+1",

@@ -84,6 +84,13 @@ export function registerSettings (onChange) {
     default: { left: 110, top: 70 }
   })
 
+  game.settings.register(MODULE_ID, 'size', {
+    scope: 'client',
+    config: false,
+    type: Object,
+    default: null
+  })
+
   game.settings.register(MODULE_ID, 'collapsed', {
     scope: 'client',
     config: false,

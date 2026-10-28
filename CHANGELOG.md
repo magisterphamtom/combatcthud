@@ -2,6 +2,10 @@
 
 ## v0.5.2
 
+### Nouveautés
+
+- **Poignée de redimensionnement** en bas à droite du HUD : on règle sa hauteur et la largeur de la colonne des cartes ; la taille est retenue. Double-clic sur la poignée : retour à la taille automatique.
+
 ### Corrections
 
 - Le libellé « Chance » des jauges n'est plus coupé par la barre (colonne des libellés élargie dans tous les thèmes).
